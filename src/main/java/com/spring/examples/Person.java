@@ -5,15 +5,13 @@ public class Person {
 	private String lastName;
 	private int age;
 	private CreditCard card;
-	private Address address;
 	
-	public Person(String firstName, String lastName, int age, CreditCard card, Address address) {
+	public Person(String firstName, String lastName, int age, CreditCard card) {
 		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.age = age;
 		this.card = card;
-		this.address = address;
 	}
 
 	public String getFirstName() {
@@ -46,13 +44,5 @@ public class Person {
 
 	public void setCard(CreditCard card) {
 		this.card = card;
-	}
-
-	public Address getAddress() {
-		return address;
-	}
-
-	public void setAddress(Address address) {
-		this.address = address;
 	}
 }

@@ -1,30 +1,20 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:c="http://www.springframework.org/schema/c"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
 	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
-
-	<!-- Constructor Injection using Index -->
-	<bean id="personBean" class="com.spring.examples.Person" depends-on="addressBean">
-		<constructor-arg index="0" value="Neeraj"/>
-		<constructor-arg index="1" value="Girolkar"/>
-		<constructor-arg index="2" value="28"/>
-		<constructor-arg index="3" ref ="creditCardBean"/>
-		<constructor-arg index="4" ref ="addressBean"/>
-	</bean>
 	
-	<!-- Constructor Injection using Type -->
-	<bean id="addressBean" class="com.spring.examples.Address">
-		<constructor-arg type="int" value="5"/>
-		<constructor-arg type="java.lang.String" value="Charlotte Street"/>
-		<constructor-arg type="java.lang.String" value="London"/>
-		<constructor-arg type="java.lang.String" value="United Kingdom"/>
-	</bean>
+	<!-- c-namespace with index -->
+	<bean id="personBean" class="com.spring.examples.Person"
+		c:_0 = "Neeraj"
+		c:_1 = "Girolkar"
+		c:_2 = "28"
+		c:_3-ref = "creditCardBean"/>
 	
-	<!-- Constructor Injection using Name -->
-	<bean id="creditCardBean" class="com.spring.examples.CreditCard">
-		<constructor-arg name="cardNumber" value="1234 5678 8765 4321"/>
-		<constructor-arg name="bankName" value="HDFC Bank"/>
-		<constructor-arg name="cvvNumber" value="707"/>
-	</bean>
+	<!-- c-namespace with name -->
+	<bean id="creditCardBean" class="com.spring.examples.CreditCard"
+		c:cardNo = "1234 5678 8765 4321"
+		c:bankName = "HDFC Bank"
+		c:cvv = "707"/>
 
 </beans>
