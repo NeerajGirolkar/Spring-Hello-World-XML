@@ -3,7 +3,28 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
 	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
-	<bean id="helloSpring" class="com.spring.examples.HelloSpring">
-		<property name="name" value="Neeraj" />
+	<!-- Constructor Injection using Index -->
+	<bean id="personBean" class="com.spring.examples.Person" depends-on="addressBean">
+		<constructor-arg index="0" value="Neeraj"/>
+		<constructor-arg index="1" value="Girolkar"/>
+		<constructor-arg index="2" value="28"/>
+		<constructor-arg index="3" ref ="creditCardBean"/>
+		<constructor-arg index="4" ref ="addressBean"/>
 	</bean>
+	
+	<!-- Constructor Injection using Type -->
+	<bean id="addressBean" class="com.spring.examples.Address">
+		<constructor-arg type="int" value="5"/>
+		<constructor-arg type="java.lang.String" value="Charlotte Street"/>
+		<constructor-arg type="java.lang.String" value="London"/>
+		<constructor-arg type="java.lang.String" value="United Kingdom"/>
+	</bean>
+	
+	<!-- Constructor Injection using Name -->
+	<bean id="creditCardBean" class="com.spring.examples.CreditCard">
+		<constructor-arg name="cardNo" value="1234 5678 8765 4321"/>
+		<constructor-arg name="bankName" value="HDFC Bank"/>
+		<constructor-arg name="cvv" value="707"/>
+	</bean>
+
 </beans>
