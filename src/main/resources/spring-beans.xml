@@ -22,9 +22,9 @@
 	
 	<!-- Constructor Injection using Name -->
 	<bean id="creditCardBean" class="com.spring.examples.CreditCard">
-		<constructor-arg name="cardNo" value="1234 5678 8765 4321"/>
+		<constructor-arg name="cardNumber" value="1234 5678 8765 4321"/>
 		<constructor-arg name="bankName" value="HDFC Bank"/>
-		<constructor-arg name="cvv" value="707"/>
+		<constructor-arg name="cvvNumber" value="707"/>
 	</bean>
 
 </beans>

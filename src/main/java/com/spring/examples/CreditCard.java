@@ -1,10 +1,13 @@
 package com.spring.examples;
 
+import java.beans.ConstructorProperties;
+
 public class CreditCard {
 	private String cardNo;
 	private String bankName;
 	private int cvv;
-
+	
+	@ConstructorProperties({"cardNumber", "bankName", "cvvNumber"})
 	public CreditCard(String cardNo, String bankName, int cvv) {
 		super();
 		this.cardNo = cardNo;
