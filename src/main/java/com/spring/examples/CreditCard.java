@@ -5,12 +5,7 @@ public class CreditCard {
 	private String bankName;
 	private int cvv;
 	
-	public CreditCard(String cardNo, String bankName, int cvv) {
-		super();
-		this.cardNo = cardNo;
-		this.bankName = bankName;
-		this.cvv = cvv;
-	}
+	public CreditCard() { }
 
 	public String getCardNo() {
 		return cardNo;

@@ -4,17 +4,25 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
 	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 	
-	<!-- c-namespace with index -->
-	<bean id="personBean" class="com.spring.examples.Person"
-		c:_0 = "Neeraj"
-		c:_1 = "Girolkar"
-		c:_2 = "28"
-		c:_3-ref = "creditCardBean"/>
-	
-	<!-- c-namespace with name -->
-	<bean id="creditCardBean" class="com.spring.examples.CreditCard"
-		c:cardNo = "1234 5678 8765 4321"
-		c:bankName = "HDFC Bank"
-		c:cvv = "707"/>
+	<!-- Setter injection using "value" attribute -->
+	<bean id="personBean" class="com.spring.examples.Person">
+		<property name="firstName" value="Neeraj"></property>
+		<property name="lastName" value="Girolkar"></property>
+		<property name="age" value="28"></property>
+		<property name="card" ref="creditCardBean"></property>
+	</bean>
+
+	<!-- Setter injection using "value" tag -->
+	<bean id="creditCardBean" class="com.spring.examples.CreditCard">
+		<property name="cardNo">
+			<value>1234 5678 8765 4321</value>
+		</property>
+		<property name="bankName">
+			<value>HDFC Bank</value>
+		</property>
+		<property name="cvv">
+			<value>707</value>
+		</property>
+	</bean>
 
 </beans>

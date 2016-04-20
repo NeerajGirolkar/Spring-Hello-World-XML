@@ -6,13 +6,7 @@ public class Person {
 	private int age;
 	private CreditCard card;
 	
-	public Person(String firstName, String lastName, int age, CreditCard card) {
-		super();
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.age = age;
-		this.card = card;
-	}
+	public Person() { }
 
 	public String getFirstName() {
 		return firstName;
